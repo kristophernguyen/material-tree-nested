@@ -1,3 +1,3 @@
-# material-tree-nested-rs2zeu
+# material-tree-nested
 
 Sample material tree with connected lines
