@@ -4,7 +4,6 @@
 <button mat-button (click)="reset($event)">Reset</button>
 <button mat-button (click)="collapseAll()">Collapse All</button>
 <button mat-button (click)="expandAll()">Expand All</button>
-<mat-checkbox [(ngModel)]="recursive">Recursive</mat-checkbox>
 <mat-card>
   <mat-tree #mytree [dataSource]="dataSource" [treeControl]="treeControl" >
     <mat-nested-tree-node *matTreeNodeDef="let node">
