@@ -11,10 +11,10 @@ import arrayTreeFilter from 'array-tree-filter';
 /**
  * Node for game
  */
-export class GameNode {
-  children: BehaviorSubject<GameNode[]>;
+export class Employee {
+  children: BehaviorSubject<Employee[]>;
   onHover: boolean;
-  constructor(public item: string, children?: GameNode[], public parent?: GameNode) {
+  constructor(public name: string,public title: string, public employeeId:string, public joinDate: string, children?: Employee[], public parent?: Employee) {
     this.children = new BehaviorSubject(children === undefined ? [] : children);
   }
 }
@@ -23,31 +23,13 @@ export class GameNode {
  * The list of games
  */
 const TREE_DATA = [
-  new GameNode('Simulation', [
-    new GameNode('Factorio'),
-    new GameNode('Oxygen not included'),
-  ]),
-  new GameNode('Indie', [
-    new GameNode(`Don't Starve`, [
-      new GameNode(`Region of Giants`),
-      new GameNode(`Together`),
-      new GameNode(`Shipwrecked`)
-    ]),
-    new GameNode('Terraria'),
-    new GameNode('Starbound'),
-    new GameNode('Dungeon of the Endless')
-  ]),
-  new GameNode('Action', [
-    new GameNode('Overcooked')
-  ]),
-  new GameNode('Strategy', [
-    new GameNode('Rise to ruins')
-  ]),
-  new GameNode('RPG', [
-    new GameNode('Magicka', [
-      new GameNode('Magicka 1'),
-      new GameNode('Magicka 2')
-    ])
+  new Employee('Kristopher Nguyen', 'CEO', 'IAA001', '01/01/1998', [
+    new Employee('Vicky Nguyen', 'VP', 'IAA002', '01/01/1998', [
+    new Employee('Madi Nguyen', 'CEO', 'IAA003', '01/01/1998'),
+    new Employee('Kloe Nguyen', 'CEO', 'IAA004', '01/01/1998'),
+    new Employee('Sophie Nguyen', 'CEO', 'IAA005', '01/01/1998'),
+    new Employee('Charlotte Nguyen', 'CEO', 'IAA006', '01/01/1998')
+  ])
   ])
 ];
 /**
@@ -64,16 +46,16 @@ export class AppComponent {
   @ViewChild('mytree') mytree;
   searchKey: string;
   recursive: boolean = false;
-  levels = new Map<GameNode, number>();
-  treeControl: NestedTreeControl<GameNode>;
+  levels = new Map<Employee, number>();
+  treeControl: NestedTreeControl<Employee>;
   nodehover: boolean;
 
 
-  dataSource: MatTreeNestedDataSource<GameNode>;
+  dataSource: MatTreeNestedDataSource<Employee>;
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {
 
-    this.treeControl = new NestedTreeControl<GameNode>(this.getChildren);
+    this.treeControl = new NestedTreeControl<Employee>(this.getChildren);
     this.dataSource = new MatTreeNestedDataSource();
     this.dataSource.data = TREE_DATA;
     
@@ -102,11 +84,11 @@ export class AppComponent {
   reset($event){
     this.dataSource.data = TREE_DATA
   }
-  getChildren = (node: GameNode) => {
+  getChildren = (node: Employee) => {
     return node.children;
   };
 
-  hasChildren = (index: number, node: GameNode) => {
+  hasChildren = (index: number, node: Employee) => {
     return node.children.value.length > 0;
   }
   collapseAll(){
