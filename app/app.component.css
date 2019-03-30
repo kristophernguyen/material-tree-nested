@@ -1,6 +1,9 @@
 .mat-tree-node {
   padding:0px !important;
 }
+.high_light_tree{
+  border-left:1px solid #f6881f;
+}
 li .childnode{
   margin-left:40px !important;
 }
@@ -8,6 +11,13 @@ li .childnode{
   top:0;
 }
 
+.iaa-form-field-text{
+  display:block;
+  width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .iaa-form-field-container{
   width:100%;
   top:0px !important;
@@ -22,11 +32,11 @@ li .childnode{
     padding-top:5px;
     padding-bottom:3ßpx;
     padding-left:10px;
-    border-bottom: 1px dotted grey;
+    border-bottom: 1px solid grey;
 }
 .iaa-form-field-container-left{
   float: left;
-  border: 1px dotted grey;
+  border: 1px solid grey;
   padding-top:5px;
   padding-left:5px;
   padding-right:5px;
@@ -36,9 +46,16 @@ li .childnode{
 .iaa-form-field-container-right{
   margin-left: 45px;
 }
+.iaa-form-field-container:hover{
+  border-right: 5px solid #f6881f;
+}
+
 .iaa-form-field-container:hover .iaa-form-field{
   font-weight:bold;
-  border-bottom: 1px dotted red;
+  border-bottom: 1px solid #f6881f;
+}
+.iaa-form-field-container:hover .iaa-form-field-container-left{
+  border: 1px solid #f6881f;
 }
 .iaa-form-field-sub{
   font-family: 'Roboto', sans-serif;
@@ -86,7 +103,7 @@ ul {
 
 li { 
   padding-left: 40px;
-  border: 1px dotted grey;
+  border: 1px solid grey;
   border-width: 0 0 1px 1px; 
   position: relative;
   top: -24px;
@@ -100,7 +117,7 @@ li div {
 }
 
 li ul {
-  border-top: 1px dotted grey;
+  border-top: 1px solid grey;
   margin-left: -40px;
   padding-left: 60px;
 }
