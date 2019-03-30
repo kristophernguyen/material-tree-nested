@@ -14,7 +14,7 @@ import arrayTreeFilter from 'array-tree-filter';
 export class Employee {
   children: BehaviorSubject<Employee[]>;
   onHover: boolean;
-  constructor(public name: string,public title: string, public employeeId:string, public joinDate: string,public directTotalCount:string, children?: Employee[], public parent?: Employee) {
+  constructor(public name: string,public title: string, public employeeId:string, public joinDate: string,public directTotalCount:string,public imageUrl:string, children?: Employee[], public parent?: Employee) {
     this.children = new BehaviorSubject(children === undefined ? [] : children);
   }
 }
@@ -23,16 +23,16 @@ export class Employee {
  * The list of games
  */
 const TREE_DATA = [
-  new Employee('Kristopher Nguyen', 'CEO', 'AA001', '01/01/1998', '1/5',[
-    new Employee('Vicky Nguyen', 'VP', 'AA002', '01/01/1998','4/5', [
-    new Employee('Madi Nguyen', 'Sr. Software Enginer', 'AA003', '01/01/1998', '0/0',),
-    new Employee('Kloe Nguyen', 'Sr. Software Enginer', 'AA004', '01/01/1998', '0/0'),
-    new Employee('Sophie Nguyen', 'Sr. Network Engineer', 'AA005', '01/01/1998','0/0'),
-    new Employee('Charlotte Nguyen', 'Sr. QA', 'AA006', '01/01/1998','0/0')
+  new Employee('Kristopher Nguyen', 'CEO', 'AA001', '01/01/1998', '1/5','https:////www.google.com/s2/u/0/photos/public/AIbEiAIAAABECLON17nn_Jmp1gEiC3ZjYXJkX3Bob3RvKigwNTU5Mzk1NDMwYTc3NWU2Mzc3MzFkMTRkNTBlMDJkOWE5ODQ3Y2MxMAFsSX2wBjU88ze9H1i9fZYZnmYUrQ?sz=32',[
+    new Employee('Vicky Nguyen', 'VP', 'AA002', '01/01/1998','4/5','https:////www.google.com/s2/u/0/photos/public/AIbEiAIAAABECLON17nn_Jmp1gEiC3ZjYXJkX3Bob3RvKigwNTU5Mzk1NDMwYTc3NWU2Mzc3MzFkMTRkNTBlMDJkOWE5ODQ3Y2MxMAFsSX2wBjU88ze9H1i9fZYZnmYUrQ?sz=32', [
+    new Employee('Madi Nguyen', 'Sr. Software Enginer', 'AA003', '01/01/1998', '0/0','https:////www.google.com/s2/u/0/photos/public/AIbEiAIAAABECLON17nn_Jmp1gEiC3ZjYXJkX3Bob3RvKigwNTU5Mzk1NDMwYTc3NWU2Mzc3MzFkMTRkNTBlMDJkOWE5ODQ3Y2MxMAFsSX2wBjU88ze9H1i9fZYZnmYUrQ?sz=32'),
+    new Employee('Kloe Nguyen', 'Sr. Software Enginer', 'AA004', '01/01/1998', '0/0','https:////www.google.com/s2/u/0/photos/public/AIbEiAIAAABECLON17nn_Jmp1gEiC3ZjYXJkX3Bob3RvKigwNTU5Mzk1NDMwYTc3NWU2Mzc3MzFkMTRkNTBlMDJkOWE5ODQ3Y2MxMAFsSX2wBjU88ze9H1i9fZYZnmYUrQ?sz=32'),
+    new Employee('Sophie Nguyen', 'Sr. Network Engineer', 'AA005', '01/01/1998','0/0', 'https:////www.google.com/s2/u/0/photos/public/AIbEiAIAAABECLON17nn_Jmp1gEiC3ZjYXJkX3Bob3RvKigwNTU5Mzk1NDMwYTc3NWU2Mzc3MzFkMTRkNTBlMDJkOWE5ODQ3Y2MxMAFsSX2wBjU88ze9H1i9fZYZnmYUrQ?sz=32'),
+    new Employee('Charlotte Nguyen', 'Sr. QA', 'AA006', '01/01/1998','0/0', 'https:////www.google.com/s2/u/0/photos/public/AIbEiAIAAABECLON17nn_Jmp1gEiC3ZjYXJkX3Bob3RvKigwNTU5Mzk1NDMwYTc3NWU2Mzc3MzFkMTRkNTBlMDJkOWE5ODQ3Y2MxMAFsSX2wBjU88ze9H1i9fZYZnmYUrQ?sz=32')
   ])
   ])
 ];
-/**
+/**,
  * @title Nested tree
  */
 
@@ -74,7 +74,7 @@ export class AppComponent {
     if (this.searchKey && this.searchKey.length > 0) {
 
       const result = arrayTreeFilter(
-        TREE_DATA, (item, level) => item.item.toLowerCase() === this.searchKey.toLowerCase()
+        TREE_DATA, (item, level) => item.name.toLowerCase() === this.searchKey.toLowerCase()
       );
       if (result) {
         this.dataSource.data = result;
