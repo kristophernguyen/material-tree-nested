@@ -14,7 +14,7 @@ import arrayTreeFilter from 'array-tree-filter';
 export class Employee {
   children: BehaviorSubject<Employee[]>;
   onHover: boolean;
-  constructor(public name: string,public title: string, public employeeId:string, public joinDate: string, children?: Employee[], public parent?: Employee) {
+  constructor(public name: string,public title: string, public employeeId:string, public joinDate: string,public directTotalCount:string, children?: Employee[], public parent?: Employee) {
     this.children = new BehaviorSubject(children === undefined ? [] : children);
   }
 }
@@ -23,12 +23,12 @@ export class Employee {
  * The list of games
  */
 const TREE_DATA = [
-  new Employee('Kristopher Nguyen', 'CEO', 'IAA001', '01/01/1998', [
-    new Employee('Vicky Nguyen', 'VP', 'IAA002', '01/01/1998', [
-    new Employee('Madi Nguyen', 'CEO', 'IAA003', '01/01/1998'),
-    new Employee('Kloe Nguyen', 'CEO', 'IAA004', '01/01/1998'),
-    new Employee('Sophie Nguyen', 'CEO', 'IAA005', '01/01/1998'),
-    new Employee('Charlotte Nguyen', 'CEO', 'IAA006', '01/01/1998')
+  new Employee('Kristopher Nguyen', 'CEO', 'AA001', '01/01/1998', '1/5',[
+    new Employee('Vicky Nguyen', 'VP', 'AA002', '01/01/1998','4/5', [
+    new Employee('Madi Nguyen', 'Sr. Software Enginer', 'AA003', '01/01/1998', '0/0',),
+    new Employee('Kloe Nguyen', 'Sr. Software Enginer', 'AA004', '01/01/1998', '0/0'),
+    new Employee('Sophie Nguyen', 'Sr. Network Engineer', 'AA005', '01/01/1998','0/0'),
+    new Employee('Charlotte Nguyen', 'Sr. QA', 'AA006', '01/01/1998','0/0')
   ])
   ])
 ];
