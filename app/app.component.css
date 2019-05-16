@@ -32,11 +32,11 @@ li .childnode{
     padding-top:5px;
     padding-bottom:3ßpx;
     padding-left:10px;
-    border-bottom: 1px solid #ced4da;;
+    border-bottom: 1px dotted #ced4da;;
 }
 .iaa-form-field-container-left{
   float: left;
-  border: 1px solid #ced4da;;
+  border: 1px dotted #ced4da;;
   padding-top:5px;
   padding-left:5px;
   padding-right:5px;
@@ -49,15 +49,15 @@ li .childnode{
   margin-left: 45px;
 }
 .iaa-form-field-container:hover{
-  border-right: 5px solid #f6881f;
+  border-right: 5px dotted #f6881f;
 }
 
 .iaa-form-field-container:hover .iaa-form-field{
   font-weight:bold;
-  border-bottom: 1px solid #f6881f;
+  border-bottom: 1px dotted #f6881f;
 }
 .iaa-form-field-container:hover .iaa-form-field-container-left{
-  border: 1px solid #f6881f;
+  border: 1px dotted #f6881f;
 }
 .iaa-form-field-sub{
   font-family: 'Roboto', sans-serif;
@@ -103,7 +103,7 @@ ul {
 
 li { 
   padding-left: 40px;
-  border: 1px solid #ced4da;
+  border: 1px dotted #ced4da;
   border-width: 0 0 1px 1px; 
   position: relative;
   top: -24px;
@@ -118,13 +118,13 @@ li div {
 }
 
 li ul {
-  border-top: 1px solid #ced4da;
+  border-top: 1px dotted #ced4da;
   margin-left: -40px;
   padding-left: 60px;
 }
 
 .mat-nested-tree-node:last-child ul {
-  border-left: 1px solid white;
+  border-left: 1px dotted white;
   margin-left: -41px;
 }
 
