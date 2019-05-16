@@ -8,9 +8,7 @@ import { merge } from 'rxjs/observable/merge';
 import { map } from 'rxjs/operators/map';
 import arrayTreeFilter from 'array-tree-filter';
 
-/**
- * Node for game
- */
+
 export class Employee {
   children: BehaviorSubject<Employee[]>;
   onHover: boolean;
@@ -19,9 +17,6 @@ export class Employee {
   }
 }
 
-/**
- * The list of games
- */
 const TREE_DATA = [
   new Employee('Kristopher Nguyen', 'CEO', 'AA001', '01/01/1998', '1/5','//www.google.com/s2/u/0/photos/public/AIbEiAIAAABECLON17nn_Jmp1gEiC3ZjYXJkX3Bob3RvKigwNTU5Mzk1NDMwYTc3NWU2Mzc3MzFkMTRkNTBlMDJkOWE5ODQ3Y2MxMAFsSX2wBjU88ze9H1i9fZYZnmYUrQ?sz=32',[
     new Employee('Vicky Nguyen', 'VP', 'AA002', '01/01/1998','4/5','//www.google.com/s2/u/0/photos/public/AIbEiAIAAABECLON17nn_Jmp1gEiC3ZjYXJkX3Bob3RvKigwNTU5Mzk1NDMwYTc3NWU2Mzc3MzFkMTRkNTBlMDJkOWE5ODQ3Y2MxMAFsSX2wBjU88ze9H1i9fZYZnmYUrQ?sz=32', [
