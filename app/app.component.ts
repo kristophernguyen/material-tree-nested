@@ -78,7 +78,7 @@ export class AppComponent {
     console.log("mouse leave");
 
   }
-  search($event) {
+  onSearchClick($event) {
     console.log("Running Search");
     if (this.searchKey && this.searchKey.length > 0) {
 
